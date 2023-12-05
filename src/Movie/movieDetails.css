@@ -1,0 +1,16 @@
+.ticket{
+    display:flex;
+    justify-content: space-evenly;
+    padding:10px;
+}
+
+
+
+.ticket .event-details{
+    border:2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap:10px;
+}
+

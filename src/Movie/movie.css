@@ -1,0 +1,7 @@
+.row_01{
+    display:flex;
+}
+
+.image-container{
+    flex-wrap: wrap;
+}

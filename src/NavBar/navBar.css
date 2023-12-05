@@ -1,0 +1,48 @@
+.navbar-container {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 20px; 
+}
+
+.navbar-container .navbar-logo{
+    width:10%;
+}
+
+.navbar-container .navbar-logo img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.navbar-container .navbar-links {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 32px;
+    position: relative;
+    margin-right: 30px;
+}
+
+.navbar-container .navbar-links a {
+    text-decoration: none;
+    color: #000;
+
+}
+
+.navbar-container .button {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 16px;
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar-container .button button {
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    color: #000;
+    cursor: pointer;
+}
