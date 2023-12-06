@@ -4,9 +4,11 @@ import MovieList from './MovieList';
 import './movie.css'
 
 const Movie = () => {
+	// State to store movies from the API
     const [movies, setMovies] = useState([]);
 
 	const getMovieRequest = async () => {
+		// Fetching API from OMDB API
 		const url = `http://www.omdbapi.com/?s=star wars&apikey=263d22d8`;
 
 		const response = await fetch(url);
@@ -21,6 +23,7 @@ const Movie = () => {
 	};
 
 	useEffect(() => {
+		// Fetch url in first render 
 		getMovieRequest();
 	}, []);
 

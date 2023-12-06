@@ -4,9 +4,11 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import './movieDetails.css'
-import OrderForm from '../Confirmation/OrderForm';
+
 
 const MovieDetails = () => {
+  // To calculate ticket count, movie details we define its state
+
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
   const [ticketCount, setTicketCount] = useState(1);
@@ -14,17 +16,19 @@ const MovieDetails = () => {
   const ticketPrice = 200
   const totalPrice = ticketPrice * ticketCount;
 
+  // Handling increment of ticket
   const handleIncrement = () =>{
     setTicketCount((prevCount) => prevCount+1)
   }
 
+  // Handling decrement of ticket
   const handleDecrement = () =>{
     setTicketCount((prevCount) => prevCount-1)
   }
 
 
   useEffect(() => {
-
+    // Fetch movie details after clicking on the poster using params id
     const fetchMovieDetails = async () => {
       const url = `http://www.omdbapi.com/?i=${id}&apikey=263d22d8`;
       const response = await fetch(url);
@@ -35,6 +39,7 @@ const MovieDetails = () => {
     fetchMovieDetails();
   }, [id]);
 
+  // To checkout current date
   const currentDate = new Date();
   const formattedDate = currentDate.toLocaleDateString();
   const formattedTime = currentDate.toLocaleTimeString();

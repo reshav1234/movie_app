@@ -3,44 +3,47 @@ import { useState } from 'react';
 import './OrderForm.css'; 
 
 const OrderForm = (props) => {
+    // Extracting props from MovieDetails 
     const {ticketPrice , totalPrice = 1000, totalCount} = props
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email:'',
-    address: '',
-    country: '',
-    state: '',
-    city: '',
-    zipcode: '',
-  });
 
+    // State to store form data
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email:'',
+        address: '',
+        country: '',
+        state: '',
+        city: '',
+        zipcode: '',
+    });
 
+    // States to store tax, discount and total amount of ticket
+    const [taxAmount, setTaxAmount] = useState(0);
+    const [discount, setDiscount] = useState(0);
+    const [totalAmount, setTotalAmount] = useState(0);
 
+    // Event handler to calculate the total amount of ticket after tax calculation
+    const handleCheckout = () => {
+        const calculatedTaxAmount = totalPrice * 0.13;
+        const calculatedTotalAmount = totalPrice + calculatedTaxAmount - discount;
 
-  const [taxAmount, setTaxAmount] = useState(0);
-  const [discount, setDiscount] = useState(0);
-  const [totalAmount, setTotalAmount] = useState(0);
+        setTaxAmount(calculatedTaxAmount);
+        setTotalAmount(calculatedTotalAmount);
+    };
 
-  const handleCheckout = () => {
-    const calculatedTaxAmount = totalPrice * 0.13;
-    const calculatedTotalAmount = totalPrice + calculatedTaxAmount - discount;
+    // Event handler to update the fomr data
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+        }));
+    };
 
-    setTaxAmount(calculatedTaxAmount);
-    setTotalAmount(calculatedTotalAmount);
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-  };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(formData);
+    };
 
   return (
     <>

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
 const MovieList = (props) => {
+	// Using map function to display 3 moivie list from the API
+	// Displays Poster and movie title
 	return (
 		<>
 			{props.movies.map((movie, index) => (
