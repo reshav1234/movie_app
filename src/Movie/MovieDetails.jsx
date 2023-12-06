@@ -1,8 +1,10 @@
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './movieDetails.css'
+import OrderForm from '../Confirmation/OrderForm';
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -56,8 +58,8 @@ const MovieDetails = () => {
                     <h2>Select ticket</h2>
                     <p>{ticketCount}x ticket(s)</p>
                     <button onClick = {handleDecrement}>-</button>
-                    <button onClick = {handleIncrement}>+</button><br />
-                    <button>CheckOut for {totalPrice}</button>
+                    <button onClick = {handleIncrement}>+</button><br /><br/>
+                    <Link to = "/orderForm" className = "redirect">CheckOut for {totalPrice}</Link>
                 </div>
             </div>
         </div>

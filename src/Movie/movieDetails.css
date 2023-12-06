@@ -14,3 +14,11 @@
     gap:10px;
 }
 
+.redirect{
+    text-decoration: none;
+    border:1px solid black;
+    margin-top:10px;
+    background-color: rgb(121, 115, 115);
+    color:white
+}
+
