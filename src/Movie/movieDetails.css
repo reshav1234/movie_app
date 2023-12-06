@@ -1,24 +1,95 @@
-.ticket{
-    display:flex;
+.ticket {
+    display: flex;
     justify-content: space-evenly;
-    padding:10px;
+    padding: 10px;
 }
-
-
-
-.ticket .event-details{
-    border:2px solid black;
+  
+.ticket .event-details {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px; 
+    width: 400px; 
+}
+  
+.user-form {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+  
+.form-group {
+    margin-bottom: 20px;
+}
+  
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+  
+.form-control {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+  
+.flex-group {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    gap:10px;
+    gap: 10px; 
+}
+  
+.flex-item {
+    flex: 1;
+}
+  
+
+.checkout button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
-.redirect{
-    text-decoration: none;
-    border:1px solid black;
-    margin-top:10px;
-    background-color: rgb(121, 115, 115);
-    color:white
+.checkout button:hover {
+    background-color: #0056b3;
 }
 
+.btn-decrement,
+.btn-increment,
+.btn-proceed {
+  padding: 8px 12px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+.btn-decrement:hover,
+.btn-increment:hover,
+.btn-proceed:hover {
+  background-color: #0056b3;
+}
+
+.btn-decrement::before,
+.btn-increment::before {
+  content: '';
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.btn-decrement::before {
+  content: '-';
+}
+
+.btn-increment::before {
+  content: '+';
+}
+  

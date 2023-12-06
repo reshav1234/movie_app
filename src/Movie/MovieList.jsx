@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import './movie.css'
 
 const MovieList = (props) => {
 	// Using map function to display 3 moivie list from the API
