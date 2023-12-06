@@ -76,8 +76,13 @@ const MovieDetails = () => {
     const posterUrl = movieDetails?.Poster;
     const numberOfTickets = ticketCount;
     const imgWidth = 50;
-    const imgHeight = 50;
+    const imgHeight = 40;
     const posterSpacing = 20;
+    const vatRate = 0.13;
+
+    let totalAmount = numberOfTickets * ticketPrice;
+    let vatAmount = totalAmount * vatRate;
+    let totalAmountWithVAT = totalAmount + vatAmount;
   
     for (let i = 0; i < numberOfTickets; i++) {
       if (posterUrl) {
@@ -91,8 +96,12 @@ const MovieDetails = () => {
   
     Object.keys(formData).forEach((name) => {
       doc.text(`${name}: ${formData[name]}`, 10, userDetailsYPos);
-      userDetailsYPos += 10; // Increment Y position for next line
+      userDetailsYPos += 7; // Increment Y position for next line
     });
+    
+    doc.text(`Total Amount (excl. VAT): $${totalAmount.toFixed(2)}`, 10, userDetailsYPos + 10);
+    doc.text(`VAT (${(vatRate * 100).toFixed(0)}%): $${vatAmount.toFixed(2)}`, 10, userDetailsYPos + 20);
+    doc.text(`Total Amount (incl. VAT): $${totalAmountWithVAT.toFixed(2)}`, 10, userDetailsYPos + 30);
   
     doc.save('ticket_details.pdf');
   };
