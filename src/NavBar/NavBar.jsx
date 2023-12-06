@@ -1,5 +1,4 @@
-import React from 'react'
-import './navbar.css'
+import './navBar.css'
 import logo from '../Assets/logo.jpg'
 
 const NavBar = () => {
