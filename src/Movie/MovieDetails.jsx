@@ -22,7 +22,7 @@ const MovieDetails = () => {
   useEffect(() => {
     // Fetch movie details after clicking on the poster using params id
     const fetchMovieDetails = async () => {
-      const url = `http://www.omdbapi.com/?i=${id}&apikey=263d22d8`;
+      const url = `https://www.omdbapi.com/?i=${id}&apikey=263d22d8`;
       const response = await fetch(url);
       const data = await response.json();
       setMovieDetails(data);
