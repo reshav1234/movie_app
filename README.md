@@ -1,7 +1,8 @@
 # Movie App
 
 This Movie App allows users to browse and view movie details, select tickets, and proceed to checkout.
-"https://movieticketapp.netlify.app"
+
+https://movieticketapp.netlify.app
 
 ## Table of Contents
 
