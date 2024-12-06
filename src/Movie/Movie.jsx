@@ -8,10 +8,10 @@ import axios from 'axios';
 const Movie = () => {
   // State to store movies from the API
   const [movies, setMovies] = useState([]);
-
+  const API_KEY = import.meta.env.VITE_API_KEY
   const getMovieRequest = async () => {
     // Fetching API from OMDB API
-    const url = `https://www.omdbapi.com/?s=star wars&apikey=263d22d8`;
+    const url = `https://www.omdbapi.com/?s=star wars&apikey=${API_KEY}`;
 
     const response = await axios.get(url);
     const responseJson = await response.data;
